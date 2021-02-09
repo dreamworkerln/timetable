@@ -1,0 +1,31 @@
+package com.example.timetable.entities.peoples;
+
+import com.example.timetable.entities.timetable.TimeTableDay;
+import lombok.AccessLevel;
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+import java.time.LocalDate;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicLong;
+
+@Data
+public class StudentList implements Iterable<Map.Entry<Long, Student>> {
+
+    @Getter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
+    private NavigableMap<Long, Student> list = new TreeMap<>();
+
+
+    public void add(Student student) {
+
+    }
+
+
+
+    @Override
+    public Iterator<Map.Entry<Long, Student>> iterator() {
+        return list.entrySet().iterator();
+    }
+}
